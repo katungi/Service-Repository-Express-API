@@ -1,3 +1,7 @@
+import express from "express"
+import { Container } from "inversify"
+import { InversifyExpressServer } from "inversify-express-utils"
+
 export class App {
   async setup(){
     const container = new Container()

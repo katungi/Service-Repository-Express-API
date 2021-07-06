@@ -1,11 +1,7 @@
 import 'dotenv/config'
-import express from 'express'
-import { Container } from 'inversify'
 import 'reflect-metadata'
-import { InversifyExpressServer } from 'inversify-express-utils'
 import './subscribers.controller'
 import mongoose from 'mongoose'
-import { subscribersModel } from './subscribers.model'
 
 console.clear()
 export async function bootstrap() {

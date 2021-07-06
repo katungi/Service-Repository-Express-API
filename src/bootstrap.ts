@@ -5,6 +5,7 @@ import 'reflect-metadata'
 import { InversifyExpressServer } from 'inversify-express-utils'
 import './subscribers.controller'
 import mongoose from 'mongoose'
+import { subscribersModel } from './subscribers.model'
 
 console.clear()
 export async function bootstrap() {
@@ -16,6 +17,8 @@ export async function bootstrap() {
   }).catch((error) => {
     console.log(error)
   });
+
+  //  mongoose.model('Subscriber', subscribersModel)
 
   const container = new Container()
   const server = new InversifyExpressServer(container)

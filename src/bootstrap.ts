@@ -1,7 +1,9 @@
 import 'dotenv/config'
 import express from 'express'
 import { Container } from 'inversify'
+import 'reflect-metadata'
 import { InversifyExpressServer } from 'inversify-express-utils'
+import './subscribers.controller'
 
 export async function bootstrap() {
   const container = new Container()

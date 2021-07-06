@@ -1,14 +1,15 @@
 import 'dotenv/config'
 import 'reflect-metadata'
+import { App } from './application'
 import './subscribers.controller'
-import mongoose from 'mongoose'
-import {container} from './di-container'
 
 console.clear()
 export async function bootstrap() {
 
+  const app = new App()
+  app.setup()
   //  mongoose.model('Subscriber', subscribersModel)
-  return {}
+  return app;
 }
 
 bootstrap()

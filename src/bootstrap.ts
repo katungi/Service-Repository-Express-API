@@ -13,7 +13,9 @@ export async function bootstrap() {
     useUnifiedTopology: true
   }).then(() => {
     console.log("Connected to the Database")
-  }).catch((error) => console.error(error))
+  }).catch((error) => {
+    console.log(error)
+  });
 
   const container = new Container()
   const server = new InversifyExpressServer(container)

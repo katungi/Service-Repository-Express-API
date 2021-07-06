@@ -9,6 +9,7 @@ import { subscribersModel } from './subscribers.model'
 
 console.clear()
 export async function bootstrap() {
+
   await mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true

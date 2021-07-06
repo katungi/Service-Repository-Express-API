@@ -4,8 +4,17 @@ import { Container } from 'inversify'
 import 'reflect-metadata'
 import { InversifyExpressServer } from 'inversify-express-utils'
 import './subscribers.controller'
+import mongoose from 'mongoose'
 
+console.clear()
 export async function bootstrap() {
+  await mongoose.connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }).then(() => {
+    console.log("Connected to the Database")
+  }).catch((error) => console.error(error))
+
   const container = new Container()
   const server = new InversifyExpressServer(container)
 
